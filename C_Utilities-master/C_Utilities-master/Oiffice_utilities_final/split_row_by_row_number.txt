@@ -1,0 +1,33 @@
+Sub SplitWorksheet()
+    Dim lngLastRow As Long
+    Dim lngNumberOfRows As Long
+    Dim lngI As Long
+    Dim strMainSheetName As String
+    Dim currSheet As Worksheet
+    Dim prevSheet As Worksheet
+    'Number of rows to split among worksheets
+    lngNumberOfRows = 2
+    'Current worksheet in workbook
+    Set prevSheet = ThisWorkbook.ActiveSheet
+    'First worksheet name
+    strMainSheetName = prevSheet.Name
+    'Number of rows in worksheet
+    lngLastRow = prevSheet.Cells(Rows.Count, 1).End(xlUp).Row
+    'Worksheet counter for added worksheets
+    lngI = 1
+    While lngLastRow > lngNumberOfRows
+        Set currSheet = ThisWorkbook.Worksheets.Add
+        With currSheet
+           .Move after:=Worksheets(Worksheets.Count)
+           .Name = strMainSheetName + "(" + CStr(lngI) + ")"
+        End With
+
+        With prevSheet.Rows(lngNumberOfRows + 1 & ":" & lngLastRow).EntireRow
+            .Cut currSheet.Range("A1")
+        End With
+
+        lngLastRow = currSheet.Cells(Rows.Count, 1).End(xlUp).Row
+        Set prevSheet = currSheet
+        lngI = lngI + 1
+    Wend
+End Sub
