@@ -17,8 +17,8 @@ def mail(to,attach):
     if not isinstance(attach,list):
         attach = [attach]
 
-    gmail_user='almamun.it@aristopharma.com'
-    gmail_pwd = "almamun.it#978#"
+    gmail_user='*****@aristopharma.com'
+    gmail_pwd = "*********"
     msg = MIMEMultipart()
     msg['From'] = gmail_user
     msg['To'] = ", ".join(to)
@@ -56,33 +56,8 @@ def mail(to,attach):
 
 # # M=['monzur.it@aristopharma.com','almamun.it@aristopharma.com']
 dicm={
-1310:'dhk@aristopharma.com',
-1311:'dnm@aristopharma.com',
-1312:'UTR@aristopharma.com',
-1313:'ngn@aristopharma.com',
-1314:'MYM@aristopharma.com',
-1315:'CHT@aristopharma.com',
-1316:'SYL@aristopharma.com',
-1317:'CML@aristopharma.com',
-1318:'NKL@aristopharma.com',
-1319:'fen@aristopharma.com',
-1320:'BGR@aristopharma.com',
-1321:'RJS@aristopharma.com',
-1322:'RNG@aristopharma.com',
-1323:'DNJ@aristopharma.com',
-1324:'JSR@aristopharma.com',
-1325:'KHL@aristopharma.com',
-1326:'BRS@aristopharma.com',
-1327:'FRD@aristopharma.com',
-1328:'CXB@aristopharma.com',
-1329:'TNG@aristopharma.com',
-1330:'PAB@aristopharma.com',
-1331:'CHP@aristopharma.com',
-1332:'BRB@aristopharma.com',
-1333:'MLB@aristopharma.com',
-1334:'KIG@aristopharma.com',
-1335:'KST@aristopharma.com',
-1336:'KNJ@aristopharma.com',
+1310:'***@aristopharma.com',
+
 }
 
 
